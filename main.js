@@ -2,16 +2,16 @@ const { createApp } = Vue
 
 createApp({
     data() {
-      return {
-       emailArray: []
-      }
+        return {
+            emailArray: []
+        }
     },
     beforeMount() {
         for (let index = 0; index < 10; index++) {
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(response => {
-                this.emailArray.push(response.data.response)
-            })
+                .then(response => {
+                    this.emailArray.push(response.data.response)
+                })
         }
     }
-  }).mount('#app')
+}).mount('#app')
